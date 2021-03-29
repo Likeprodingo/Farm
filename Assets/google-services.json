@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "550061225794",
+    "firebase_url": "https://roborush-ed632-default-rtdb.firebaseio.com",
+    "project_id": "roborush-ed632",
+    "storage_bucket": "roborush-ed632.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550061225794:android:10f19677ed6d11c2e93adb",
+        "android_client_info": {
+          "package_name": "com.apm2studio.roborush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550061225794-hbc8r3utnahbd1vcoj0lk2ckhbnaends.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtUFYcIWnhOsgL50PvAvBvfvH7Ae7DX_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550061225794-hbc8r3utnahbd1vcoj0lk2ckhbnaends.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "550061225794-cbk5g2auulj0139pi61qn34dd7cc4dbd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apm2studio.roborush"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

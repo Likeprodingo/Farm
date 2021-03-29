@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - World
+  - Target
+  - FX
+  - Projectile
+  - Enemy
+  - EnemyProjectile
+  - TransparentObject
+  - EnemyAoe
+  - Aoe
+  - Heal
+  - Checkpoint
+  - BossAttack
+  - Companion
+  - FxTemporaire
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Enemy
+  - DetectionRadius
+  - Projectile
+  - Player
+  - Highlighted
+  - Props
+  - NavMeshGeneration
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UIParticles
+    uniqueID: 3357687215
+    locked: 0

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="firebase_database_url" translatable="false">https://roborush-ed632-default-rtdb.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">550061225794</string>
+  <string name="google_storage_bucket" translatable="false">roborush-ed632.appspot.com</string>
+  <string name="project_id" translatable="false">roborush-ed632</string>
+  <string name="google_api_key" translatable="false">AIzaSyCtUFYcIWnhOsgL50PvAvBvfvH7Ae7DX_o</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCtUFYcIWnhOsgL50PvAvBvfvH7Ae7DX_o</string>
+  <string name="google_app_id" translatable="false">1:550061225794:android:10f19677ed6d11c2e93adb</string>
+  <string name="default_web_client_id" translatable="false">550061225794-hbc8r3utnahbd1vcoj0lk2ckhbnaends.apps.googleusercontent.com</string>
+</resources>

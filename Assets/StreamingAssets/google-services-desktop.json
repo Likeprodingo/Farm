@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "550061225794-cbk5g2auulj0139pi61qn34dd7cc4dbd.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7h00PL0OsOFMy-Cpw2yuZkFModTBAa2s"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:550061225794:ios:779809cc4d63eb44e93adb", 
+        "android_client_info": {
+          "package_name": "com.apm2studio.roborush"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "roborush-ed632.appspot.com", 
+    "project_id": "roborush-ed632", 
+    "firebase_url": "https://roborush-ed632-default-rtdb.firebaseio.com", 
+    "project_number": "550061225794"
+  }
+}

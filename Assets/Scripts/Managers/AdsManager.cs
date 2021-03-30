@@ -258,39 +258,39 @@ namespace Assets.Scripts.Managers
             onEndVideo.Invoke(true);
             _onEndVideo = onEndVideo;
 #else
-            if (IsCanWatchRewardAd())
-            {
-                if (!IronSource.Agent.isRewardedVideoAvailable())
-                {
-                    if (withLoading)
-                    {
-                        StartCoroutine(ShowNotReadyRewardedCor(onEndVideo));
-                        return;
-                    }
-                    else
-                    {
-                        _loadingAdsUIController.AdsNotReadyPanelActivate();
-                        onEndVideo.Invoke(false);
-                        return;
-                    }
-                }
-
-                _isRewardVideoEnds = false;
-                TogglePauseOnAds(false);
-                IronSource.Agent.showRewardedVideo();
-                _onEndVideo = onEndVideo;
-            }
-            else
-            {
-                if (showInt)
-                {
-                    ShowInterstitialAd(onEndVideo);
-                }
-                else
-                {
-                    _loadingAdsUIController.AdsNotReadyPanelActivate();
-                }
-            }
+            // if (IsCanWatchRewardAd())
+            // {
+            //     if (!IronSource.Agent.isRewardedVideoAvailable())
+            //     {
+            //         if (withLoading)
+            //         {
+            //             StartCoroutine(ShowNotReadyRewardedCor(onEndVideo));
+            //             return;
+            //         }
+            //         else
+            //         {
+            //             _loadingAdsUIController.AdsNotReadyPanelActivate();
+            //             onEndVideo.Invoke(false);
+            //             return;
+            //         }
+            //     }
+            //
+            //     _isRewardVideoEnds = false;
+            //     TogglePauseOnAds(false);
+            //     IronSource.Agent.showRewardedVideo();
+            //     _onEndVideo = onEndVideo;
+            // }
+            // else
+            // {
+            //     if (showInt)
+            //     {
+            //         ShowInterstitialAd(onEndVideo);
+            //     }
+            //     else
+            //     {
+            //         _loadingAdsUIController.AdsNotReadyPanelActivate();
+            //     }
+            // }
 #endif
         }
 

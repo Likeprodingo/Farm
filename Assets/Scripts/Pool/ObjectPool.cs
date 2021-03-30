@@ -31,6 +31,16 @@ namespace Pool
         
         private void PreparePool()
         {
+            var _assetManager = AssetManager.Instance;
+            foreach (var obj in _assetManager.productionPrefabs)
+            {
+                Prepare(obj.prefab, obj.count);
+            }
+            
+            foreach (var obj in _assetManager.tilePrefabs)
+            {
+                Prepare(obj.prefab, obj.count);
+            }
             
         }
 

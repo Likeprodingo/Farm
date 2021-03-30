@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Vector3 _cameraOffset;
     [SerializeField] private float _smoothSpeed;
 
-    private Transform _targetTransform;
+    [SerializeField] private Transform _targetTransform;
 
     private void OnEnable()
     {

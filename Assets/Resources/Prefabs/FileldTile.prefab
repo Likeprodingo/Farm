@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4420250238409588315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3454072530731823811}
+  m_Layer: 15
+  m_Name: ProdPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3454072530731823811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420250238409588315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5728516871016811117}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5728516871017043533
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +42,8 @@ GameObject:
   - component: {fileID: 5728516871020235341}
   - component: {fileID: 5728516871019235469}
   - component: {fileID: 2402996346323223390}
-  m_Layer: 0
+  - component: {fileID: 6451432346804076775}
+  m_Layer: 15
   m_Name: FileldTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +59,9 @@ Transform:
   m_GameObject: {fileID: 5728516871017043533}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 0.4, y: 1, z: 0.4}
+  m_Children:
+  - {fileID: 3454072530731823811}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,3 +128,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: aaff327437b0be14f9c6d1be9b411708, type: 3}
+--- !u!114 &6451432346804076775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728516871017043533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf28b69176d49bc91fc3b40239cd4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _production: {fileID: 3501755886381030360, guid: cd44a21da72914ad08d64c829295096c,
+    type: 3}
+  _spawnProdPosition: {fileID: 3454072530731823811}
+  _renderer: {fileID: 5728516871019235469}
+  _plowed: {fileID: 2100000, guid: e3b2801ec203c4d9b8b82b0256d98c80, type: 2}

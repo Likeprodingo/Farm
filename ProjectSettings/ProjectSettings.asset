@@ -146,7 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.apm2studio.roborush
+    Android: com.apm2studio.farm
     iPhone: com.apm2studio.roborush
   buildNumber:
     Standalone: 0

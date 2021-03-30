@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71896593669c24ac6ba6e553d9f745a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _productionPrefabs:
+  - _prefab: {fileID: 3501755886381030360, guid: cd44a21da72914ad08d64c829295096c,
+      type: 3}
+    _count: 20
+  _tilePrefabs:
+  - _prefab: {fileID: 6451432346804076775, guid: 45f65b1f099b94eacb843832785e8976,
+      type: 3}
+    _count: 20

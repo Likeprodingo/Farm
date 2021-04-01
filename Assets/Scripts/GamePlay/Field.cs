@@ -6,11 +6,15 @@ using Pool;
 using UnityEngine;
 using DG.Tweening;
 using GameController;
+using GamePlay.Enviroment.TIleStates;
+using GamePlay.Enviroment.TIleStates.Impl;
 
 namespace GamePlay
 {
     public class Field : MonoBehaviour
     {
+        public static event Action UpdateState = delegate { };
+
         [SerializeField] private int _fieldWidth = 3;
         [SerializeField] private int _fieldHeight = 3;
         [SerializeField] private Tile _productionTile = default;
@@ -18,60 +22,62 @@ namespace GamePlay
         [SerializeField] private float _marginVertical = 3f;
         [SerializeField] private float _marginHorizontal = 3f;
 
-        private List<Tile> _activeTiles = new List<Tile>();
-        
-        public static event Action<FieldState> UpdateState = delegate {  };
+        [SerializeField] private float _fieldDelay = 1f;
 
         private int _tileProcessed = 0;
-        
-        private Vector3 _currentSpawnPosition;
+        private int _totalTileCount;
 
+        private FieldState _state = FieldState.DIRTY;
+
+        private Queue<FieldState> _fieldStates = new Queue<FieldState>();
+        
         private void OnEnable()
         {
             GameManager.GameStarted += GameManagerGameStarted;
+            TileState.StateCompleted += TileStateOnStateCompleted;
         }
         
+        private void OnDisable()
+        {
+            GameManager.GameStarted -= GameManagerGameStarted;
+            TileState.StateCompleted -= TileStateOnStateCompleted;
+        }
+
         private void GameManagerGameStarted()
         {
             SpawnField();
         }
-
-        private void OnDisable()
-        {
-            GameManager.GameStarted -= GameManagerGameStarted;
-            foreach (var tile in _activeTiles)
-            {
-                tile.UpdatedState -= TileUpdateState;
-                ObjectPool.Instance.FreeObject(tile);
-            }
-            _activeTiles.Clear();
-        }
-
-        private void TileUpdateState(FieldState state)
+        
+        private void TileStateOnStateCompleted(TileState obj)
         {
             _tileProcessed++;
-            if (_tileProcessed == _activeTiles.Count)
+            if (_tileProcessed == _totalTileCount)
             {
                 _tileProcessed = 0;
-                UpdateState.Invoke(state==FieldState.DIRTY ? FieldState.PLOWED : FieldState.DIRTY);
+                StartCoroutine(UpdateStateInvoke());
             }
+        }
+
+        private IEnumerator UpdateStateInvoke()
+        {
+            yield return new WaitForSeconds(_fieldDelay);
+            UpdateState.Invoke();
         }
         
         private void SpawnField()
         {
             var pool = ObjectPool.Instance;
-            _currentSpawnPosition = transform.position;
+            Vector3 currentSpawnPosition = transform.position;
+            _totalTileCount = _fieldHeight * _fieldWidth;
             for (int i = 0; i < _fieldHeight; i++)
             {
-                _currentSpawnPosition.z += _marginVertical * i;
+                currentSpawnPosition.z += _marginVertical * i;
                 for (int j = 0; j < _fieldWidth; j++)
                 {
-                    Tile _tile = pool.Get<Tile>(_productionTile, _currentSpawnPosition, Quaternion.identity, transform);
-                    _tile.UpdatedState += TileUpdateState;
-                    _activeTiles.Add(_tile);
-                    _currentSpawnPosition.x += _marginHorizontal;
+                    pool.Get<Tile>(_productionTile, currentSpawnPosition, Quaternion.identity, transform);
+                    currentSpawnPosition.x += _marginHorizontal;
                 }
-                _currentSpawnPosition = transform.position;
+                currentSpawnPosition = transform.position;
             }
         }
     }

@@ -4,6 +4,6 @@ namespace Assets.Scripts.Enum
     {
         DIRTY,
         PLOWED,
-        PROCESSED
+        PLANTED
     }
 }

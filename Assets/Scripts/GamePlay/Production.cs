@@ -15,7 +15,7 @@ namespace GamePlay
         [SerializeField] private float _timeDelta = 1f;
         [SerializeField] private Vector3 _maxScale = new Vector3(4,4,4);
         [SerializeField] private float _maxGrowPosDelta = 1f;
-        [SerializeField] private float _collectActionTime = 1f;
+        [SerializeField] private float _collectActionTime = 0.3f;
 
         private Vector3 _startScale;
 
@@ -60,9 +60,7 @@ namespace GamePlay
         {
             if (_state == ProductionState.READY && other.TryGetComponent(out PlayerCollector _collector))
             {
-                Debug.Log("collected");
                 Picked.Invoke();
-                _collector.State = PlayerState.COLLECT;
                 StartCoroutine(CollectAction());
             }
         }

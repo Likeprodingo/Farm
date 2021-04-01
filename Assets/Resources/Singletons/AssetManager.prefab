@@ -46,8 +46,8 @@ MonoBehaviour:
   _productionPrefabs:
   - _prefab: {fileID: 3501755886381030360, guid: cd44a21da72914ad08d64c829295096c,
       type: 3}
-    _count: 20
+    _count: 30
   _tilePrefabs:
   - _prefab: {fileID: 6451432346804076775, guid: 45f65b1f099b94eacb843832785e8976,
       type: 3}
-    _count: 20
+    _count: 30

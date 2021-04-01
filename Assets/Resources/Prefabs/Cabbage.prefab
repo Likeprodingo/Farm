@@ -113,4 +113,4 @@ MonoBehaviour:
   _timeDelta: 1
   _maxScale: {x: 4, y: 4, z: 4}
   _maxGrowPosDelta: 1
-  _collectActionTime: 0.2
+  _collectActionTime: 0.5
